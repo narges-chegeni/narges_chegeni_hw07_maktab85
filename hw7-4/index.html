@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>hw7-4</title>
+  </head>
+  <body>
+    <script>
+      let arr = [
+        "nap",
+        "teachers",
+        "cheaters",
+        "PAN",
+        "ear",
+        "era",
+        "hectares",
+      ];
+
+      function anagrams(a, b) {
+        if (a != undefined && b != undefined) {
+          b = b.split("");
+          let check;
+          if (a.length == b.length) {
+            for (let i = 0; i < a.length; i++) {
+              let temp = "";
+              b.forEach((item) => {
+                if (
+                  item === a[i] ||
+                  item === a[i].toUpperCase() ||
+                  item === a[i].toLowerCase()
+                ) {
+                  temp = item;
+                }
+              });
+              if (temp) {
+                let index = b.findIndex((item) => item == temp);
+                b.splice(index, 1);
+                check = true;
+              } else {
+                check = false;
+              }
+            }
+          } else {
+            check = false;
+            return check;
+          }
+          return check;
+        } else {
+          check = false;
+          return check;
+        }
+      }
+
+      function aclean(arr) {
+        let result = arr;
+
+        for (let i = 0; i < arr.length; i++) {
+          for (let j = i + 1; j < arr.length; j++) {
+            if (anagrams(arr[i], arr[j])) {
+              result.splice(j, 1, "");
+            }
+          }
+        }
+        result.sort((a, b) => {
+          if (a == "") {
+            return 1;
+          } else {
+            return -1;
+          }
+        });
+        let index = result.findIndex((item) => item == "");
+        result.splice(index);
+        return result;
+      }
+
+      console.log(aclean(arr));
+    </script>
+  </body>
+</html>
