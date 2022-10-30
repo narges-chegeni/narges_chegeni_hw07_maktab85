@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>hw7-1</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      let salaries = {
+        John: 100,
+        Pete: 300,
+        Mary: 250,
+        jack: 300,
+      };
+
+      console.log(topSalary(salaries));
+
+      function topSalary(object) {
+        let sortedArr = Object.entries(object).sort((pre, current) => {
+          if (pre[1] < current[1]) {
+            return 1;
+          } else {
+            return -1;
+          }
+        });
+        let max = sortedArr[0][1];
+        let result = [];
+        sortedArr.forEach(([key, value]) => {
+          if (value === max) {
+            result.push(key);
+          }
+        });
+        return result;
+      }
+    </script>
+  </body>
+</html>
