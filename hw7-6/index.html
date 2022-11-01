@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>hw7-6</title>
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header>Student Registeration Form</header>
+    <form>
+      <label for="firstName">Firstname:</label>
+      <input
+        type="text"
+        id="firstName"
+        placeholder="firstname"
+        pattern="[a-zA-Z]"
+      /><br />
+      <label for="middleName">Middlename:</label>
+      <input
+        type="text"
+        id="middleName"
+        placeholder="middlename"
+        pattern="[a-zA-Z]"
+      /><br />
+      <label for="lastName">Lastname:</label>
+      <input
+        type="text"
+        id="lastName"
+        placeholder="Lastname"
+        pattern="[a-zA-Z]"
+      /><br />
+      <div>
+        <label for="course">course:</label>
+        <select id="course">
+          <option value="course">course</option>
+          <option value="a">a</option>
+          <option value="b">b</option>
+          <option value="c">c</option>
+        </select>
+      </div>
+      <br />
+      <label>Gender:</label>
+      <div>
+        <input type="radio" class="gender" />
+        <label> Male</label>
+        <input type="radio" class="gender" />
+        <label> Female</label>
+        <input type="radio" class="gender" />
+        <label> Other</label>
+      </div>
+      <br />
+      <label>Phone:</label>
+      <input type="text" value="+91" readonly />
+      <br />
+      <input type="number" pattern="[0-9]{10}" placeholder="Phone no." />
+      <br />
+      <label>Current Address:</label>
+      <textarea placeholder="Current Address"></textarea>
+      <br />
+      <label>Email:</label>
+      <input
+        type="text"
+        placeholder="Enter Email"
+        pattern="[a-z_*&^%$#!]+@[a-z_*&^%$#!]+\.[a-z_*&^%$#!]{1,}"
+      /><br />
+      <label>Password:</label>
+      <input
+        placeholder="Enter Password"
+        type="password"
+        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+      /><br />
+      <label>Re-Type Password:</label>
+      <input placeholder="Retype Password" type="password" /><br />
+      <button type="submit">Register</button>
+    </form>
+  </body>
+</html>
